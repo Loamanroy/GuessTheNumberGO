@@ -10,18 +10,19 @@ func main() {
 	randomNumber := rand.Intn(100) + 1
 	fmt.Println("Game - guess the number")
 	fmt.Println("Enter your number between 1 to 100")
-	var userEnter int
 	for i := 9; i >= 0; i-- {
-		scan, err := fmt.Scan(&userEnter)
+		var userEnter int
+		_, err := fmt.Scan(&userEnter)
 		if err != nil {
+			fmt.Println("Error reading input:", err)
 			return
 		}
-		if scan < randomNumber {
+		if userEnter < randomNumber {
 			fmt.Println("Your guess is too low")
-			fmt.Println(scan)
-		} else if scan > randomNumber {
+			fmt.Println(userEnter)
+		} else if userEnter > randomNumber {
 			fmt.Println("Your guess is too high")
-		} else if scan == randomNumber {
+		} else if userEnter == randomNumber {
 			fmt.Println("Your guess is guess!!")
 			break
 		}
