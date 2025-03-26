@@ -30,5 +30,6 @@ func main() {
 			break
 		}
 		fmt.Println("You have only", i, "tries to guess")
+
 	}
 }
